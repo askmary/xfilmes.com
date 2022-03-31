@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/xfilmes.com/static/js/main.29e40f20.js",
+    "main.js": "/xfilmes.com/static/js/main.8553597d.js",
     "static/js/787.2aeb5e99.chunk.js": "/xfilmes.com/static/js/787.2aeb5e99.chunk.js",
     "index.html": "/xfilmes.com/index.html",
-    "main.29e40f20.js.map": "/xfilmes.com/static/js/main.29e40f20.js.map",
+    "main.8553597d.js.map": "/xfilmes.com/static/js/main.8553597d.js.map",
     "787.2aeb5e99.chunk.js.map": "/xfilmes.com/static/js/787.2aeb5e99.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.29e40f20.js"
+    "static/js/main.8553597d.js"
   ]
 }
