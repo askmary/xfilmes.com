@@ -7,7 +7,8 @@ const ApiFilms = Axios.create({
   
   export default class App extends React.Component{
     state = {
-      listFilm:[]
+      listFilm:[],
+      filmesFiltrados: []
     }
     async componentDidMount(){
       const response = await ApiFilms.get()
@@ -18,13 +19,34 @@ const ApiFilms = Axios.create({
           poster:`https://image.tmdb.org/t/p/w500/${item.poster_path}`
         }
       })
-      this.setState({listFilm:Films})
+      this.setState({
+        listFilm:Films,
+        filmesFiltrados:Films
+      })
+    }
+    filtrarFilmes = (e) => {
+      const {listFilm} = this.state
+      if(e.target.value === ""){
+        this.Setstate({
+          filmesFiltrados: listFilm
+        })
+        return
+      }
+      const filmsFilter = listFilm.filter((item) => {
+        if (item.title.toLowerCase().includes(e.target.value.toLowerCase())){
+          return true
+        }
+      }) 
+      this.setState({
+        filmesFiltrados: filmsFilter
+      })
     }
     render(){
         return(
             <div>
               <h1>FILMES</h1>
-              {this.state.listFilm.map((item) => (
+              <input type="text" placeholder="Busque aqui seu filme..." onChange={this.filtrarFilmes}/>
+              {this.state.filmesFiltrados.map((item) => (
               <div>
                 <h2>{item.title}</h2>
                 <img src={item.poster} alt={`Capa do filme ${item.title}`} title={`Filme "${item.title}"`} />
